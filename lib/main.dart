@@ -14,7 +14,7 @@ class Auth extends StatelessWidget
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Signin(),
+      home: Welcom(),
     );
   }
 }

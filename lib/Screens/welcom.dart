@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_login_app/Screens/signin.dart';
 
@@ -15,7 +16,7 @@ class Welcom extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.topRight,
-            child: Image.asset('assets/BG2.png', width: 350),
+            child: Image.asset('assets/BG2.png', width: 300),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 15, top: 35),
@@ -41,9 +42,9 @@ class Welcom extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 45),
+          Gap(70),
           Padding(
-            padding: EdgeInsetsGeometry.only(left: 250),
+            padding: EdgeInsetsGeometry.only(left: 230),
             child: GestureDetector(
               onTap: () {
                 Navigator.pushReplacement(
