@@ -18,7 +18,7 @@ class Welcom extends StatelessWidget {
             child: Image.asset('assets/BG2.png', width: 350),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: const EdgeInsets.only(left: 15, top: 35),
             child: Text(
               "Welcom",
               style: GoogleFonts.rubik(
@@ -27,7 +27,7 @@ class Welcom extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.only(left: 16),
 
             child: Text(
               'Lorm ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui\n rhoncus auctor.',
@@ -35,7 +35,7 @@ class Welcom extends StatelessWidget {
                 textStyle: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
-                  color: const Color.fromARGB(255, 132, 133, 134),
+                  color: const Color.fromARGB(255, 186, 186, 186),
                 ),
               ),
             ),
@@ -57,7 +57,7 @@ class Welcom extends StatelessWidget {
                     "Continue",
                     style: GoogleFonts.rubik(
                       textStyle: TextStyle(
-                        color: const Color.fromARGB(255, 132, 133, 134),
+                        color: const Color.fromARGB(255, 186, 186, 186),
                       ),
                     ),
                   ),

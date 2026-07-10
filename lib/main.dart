@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_login_app/Screens/signin.dart';
 import 'package:simple_login_app/Screens/welcom.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class Auth extends StatelessWidget
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Welcom(),
+      home: Signin(),
     );
   }
 }
