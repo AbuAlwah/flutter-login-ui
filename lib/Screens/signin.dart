@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_login_app/Screens/signup.dart';
+import 'package:simple_login_app/Widgets/CustomAuthFooter.dart';
 import 'package:simple_login_app/Widgets/CustomAuthHeader.dart';
 import 'package:simple_login_app/Widgets/CustomContainer.dart';
 import 'package:simple_login_app/Widgets/CustomTextFiled.dart';
@@ -27,7 +28,7 @@ class Signin extends StatelessWidget {
           Gap(30),
           CustomTextFiled(
             name: 'Email',
-            hintText: 'abualwah@gmail.com',
+            hintText: 'ex: abualwah@gmail.com',
             suffixIcon: Icons.email_outlined,
           ),
           Gap(5),
@@ -81,45 +82,18 @@ class Signin extends StatelessWidget {
               ],
             ),
           ),
-          Gap(60),
+          Gap(70),
           CustomContainer(name: 'Login'),
           Gap(10),
-          Padding(
-            padding: EdgeInsetsGeometry.symmetric(horizontal: 10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Don't have an account ?",
-                  style: GoogleFonts.rubik(
-                    textStyle: TextStyle(
-                      color: const Color.fromARGB(255, 193, 193, 191),
-                    ),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Signup()),
-                    );
-                  },
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  ),
-                  child: Text(
-                    'Sign Up',
-                    style: GoogleFonts.rubik(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xFF6F12E7),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          CustomAuthFotter(
+            questionText: "Don't have an account ? ",
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Signup()),
+              );
+            },
+            actionText: 'Login',
           ),
         ],
       ),
