@@ -41,8 +41,53 @@ class Signin extends StatelessWidget {
           Gap(5),
           CustomTextFiled(
             name: 'Password',
-            hintText: 'Enter your Password',
-            suffixIcon: Icons.password_outlined,
+            hintText: 'Enter your password',
+            suffixIcon: Icons.visibility_off_outlined,
+          ),
+
+          Padding(
+            padding: EdgeInsetsGeometry.symmetric(
+              horizontal: 16.0,
+              vertical: 8.0,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    SizedBox(
+                      height: 24,
+                      width: 24,
+                      child: Checkbox(
+                        value: true,
+                        onChanged: (value) {},
+                        activeColor: const Color(0xFF6F12E7),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Text('Remember Me', style: GoogleFonts.rubik()),
+                  ],
+                ),
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: Text(
+                    'Forget Password ?',
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: Color(0xFF6F12E7)
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

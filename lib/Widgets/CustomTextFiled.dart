@@ -37,7 +37,7 @@ class CustomTextFiled extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: TextField(
             decoration: InputDecoration(
-              suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+              suffixIcon: Icon(suffixIcon),
               hintText: hintText,
               hintStyle: TextStyle(
                 color: const Color.fromARGB(255, 193, 193, 191),
