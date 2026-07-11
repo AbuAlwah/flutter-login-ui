@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_login_app/Screens/signup.dart';
+import 'package:simple_login_app/Widgets/CustomAuthHeader.dart';
+import 'package:simple_login_app/Widgets/CustomContainer.dart';
 import 'package:simple_login_app/Widgets/CustomTextFiled.dart';
 
 class Signin extends StatelessWidget {
@@ -14,23 +16,12 @@ class Signin extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Align(
-            alignment: AlignmentGeometry.topRight,
-            child: Image.asset('assets/singleCircle.png', width: 300),
-          ),
-          Padding(
-            padding: EdgeInsetsGeometry.symmetric(horizontal: 16),
-            child: Text(
-              'Sign in',
-              style: GoogleFonts.rubik(
-                textStyle: TextStyle(fontSize: 40),
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsetsGeometry.symmetric(horizontal: 16),
-            child: Image.asset('assets/Line.png', width: 95),
+          CustomAuthHeader(
+            imagePath: 'assets/singleCircle.png',
+            title: 'Sign in',
+            imageWidth: 300,
+            imageLinePath: 'assets/Line.png',
+            imageLineWidth: 95,
           ),
 
           Gap(30),
@@ -91,25 +82,7 @@ class Signin extends StatelessWidget {
             ),
           ),
           Gap(60),
-          Center(
-            child: Container(
-              width: 250,
-              height: 50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                color: Color(0xFF6F12E7),
-              ),
-              child: Center(
-                child: Text(
-                  'Login',
-                  style: GoogleFonts.rubik(
-                    textStyle: TextStyle(color: Colors.white),
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          CustomContainer(name: 'Login'),
           Gap(10),
           Padding(
             padding: EdgeInsetsGeometry.symmetric(horizontal: 10.0),
