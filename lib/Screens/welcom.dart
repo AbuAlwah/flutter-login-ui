@@ -16,7 +16,7 @@ class Welcom extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.topRight,
-            child: Image.asset('assets/BG2.png', width: 300),
+            child: Image.asset('assets/doubleCircuits.png', width: 300),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 15, top: 35),

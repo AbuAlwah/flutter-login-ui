@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:simple_login_app/Screens/signin.dart';
 import 'package:simple_login_app/Widgets/CustomAuthFooter.dart';
 import 'package:simple_login_app/Widgets/CustomAuthHeader.dart';
 import 'package:simple_login_app/Widgets/CustomContainer.dart';
