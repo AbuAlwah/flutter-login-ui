@@ -36,7 +36,7 @@ class Welcom extends StatelessWidget {
                 textStyle: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
-                  color: const Color.fromARGB(255, 186, 186, 186),
+                  color: const Color.fromARGB(255, 193, 193, 191),
                 ),
               ),
             ),
@@ -58,7 +58,7 @@ class Welcom extends StatelessWidget {
                     "Continue",
                     style: GoogleFonts.rubik(
                       textStyle: TextStyle(
-                        color: const Color.fromARGB(255, 186, 186, 186),
+                        color: const Color.fromARGB(255, 193, 193, 191),
                       ),
                     ),
                   ),

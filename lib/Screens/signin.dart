@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:simple_login_app/Screens/signup.dart';
 import 'package:simple_login_app/Widgets/CustomTextFiled.dart';
 
 class Signin extends StatelessWidget {
@@ -15,7 +16,7 @@ class Signin extends StatelessWidget {
         children: [
           Align(
             alignment: AlignmentGeometry.topRight,
-            child: Image.asset('assets/singleCircle.png', width: 250),
+            child: Image.asset('assets/singleCircle.png', width: 300),
           ),
           Padding(
             padding: EdgeInsetsGeometry.symmetric(horizontal: 16),
@@ -64,7 +65,7 @@ class Signin extends StatelessWidget {
                         activeColor: const Color(0xFF6F12E7),
                       ),
                     ),
-                    const SizedBox(width: 8),
+                    const Gap(8),
                     Text('Remember Me', style: GoogleFonts.rubik()),
                   ],
                 ),
@@ -81,7 +82,65 @@ class Signin extends StatelessWidget {
                       textStyle: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 14,
-                        color: Color(0xFF6F12E7)
+                        color: Color(0xFF6F12E7),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Gap(60),
+          Center(
+            child: Container(
+              width: 250,
+              height: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: Color(0xFF6F12E7),
+              ),
+              child: Center(
+                child: Text(
+                  'Login',
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(color: Colors.white),
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Gap(10),
+          Padding(
+            padding: EdgeInsetsGeometry.symmetric(horizontal: 10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an account ?",
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
+                      color: const Color.fromARGB(255, 193, 193, 191),
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Signup()),
+                    );
+                  },
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: Text(
+                    'Sign Up',
+                    style: GoogleFonts.rubik(
+                      textStyle: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF6F12E7),
                       ),
                     ),
                   ),
