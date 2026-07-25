@@ -31,12 +31,14 @@ class Signin extends StatelessWidget {
               name: 'Email',
               hintText: 'ex: abualwah@gmail.com',
               suffixIcon: Icons.email_outlined,
+              isObscure: false,
             ),
             Gap(5),
             CustomTextFiled(
               name: 'Password',
               hintText: 'Enter your password',
               suffixIcon: Icons.visibility_off_outlined,
+              isObscure: true,
             ),
         
             Padding(
