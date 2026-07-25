@@ -7,11 +7,18 @@ import 'package:simple_login_app/Widgets/CustomAuthHeader.dart';
 import 'package:simple_login_app/Widgets/CustomContainer.dart';
 import 'package:simple_login_app/Widgets/CustomTextFiled.dart';
 
-class Signin extends StatelessWidget {
+class Signin extends StatefulWidget {
   const Signin({super.key});
 
   @override
+  State<Signin> createState() => _SigninState();
+}
+
+class _SigninState extends State<Signin> {
+      bool isRememberMe = false;
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -21,11 +28,11 @@ class Signin extends StatelessWidget {
             CustomAuthHeader(
               imagePath: 'assets/singleCircle.png',
               title: 'Sign in',
-              imageWidth: 300,
+              imageWidth: 270,
               imageLinePath: 'assets/Line.png',
               imageLineWidth: 95,
             ),
-        
+
             Gap(30),
             CustomTextFiled(
               name: 'Email',
@@ -40,7 +47,7 @@ class Signin extends StatelessWidget {
               suffixIcon: Icons.visibility_off_outlined,
               isObscure: true,
             ),
-        
+
             Padding(
               padding: EdgeInsetsGeometry.symmetric(
                 horizontal: 16.0,
@@ -55,8 +62,12 @@ class Signin extends StatelessWidget {
                         height: 24,
                         width: 24,
                         child: Checkbox(
-                          value: true,
-                          onChanged: (value) {},
+                          value: isRememberMe,
+                          onChanged: (value) {
+                            setState(() {
+                              isRememberMe = value ?? false;
+                            });
+                          },
                           activeColor: const Color(0xFF6F12E7),
                         ),
                       ),
@@ -91,7 +102,7 @@ class Signin extends StatelessWidget {
             CustomAuthFotter(
               questionText: "Don't have an account ? ",
               onTap: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const Signup()),
                 );

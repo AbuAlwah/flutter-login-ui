@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:simple_login_app/Screens/signin.dart';
 import 'package:simple_login_app/Widgets/CustomAuthFooter.dart';
 import 'package:simple_login_app/Widgets/CustomAuthHeader.dart';
 import 'package:simple_login_app/Widgets/CustomContainer.dart';
@@ -19,7 +20,7 @@ class Signup extends StatelessWidget {
             CustomAuthHeader(
               imagePath: 'assets/singleCircle.png',
               title: 'Sign Up',
-              imageWidth: 200,
+              imageWidth: 170,
               imageLinePath: 'assets/Line.png',
               imageLineWidth: 95,
             ),
@@ -57,7 +58,7 @@ class Signup extends StatelessWidget {
             CustomAuthFotter(
               questionText: 'Already have an account ! ',
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Signin()));
               },
               actionText: 'Create Account',
             ),
