@@ -36,7 +36,25 @@ class CustomTextFiled extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: TextField(
+            child: TextFormField(
+              keyboardType: name == "Email"
+                  ? TextInputType.emailAddress
+                  : TextInputType.text,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              validator: (value) {
+                if (name == "Email") {
+                  if (value == null || value.isEmpty) {
+                    return 'Please, Enter your email !';
+                  }
+                  final emailRegex = RegExp(
+                   r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+                  );
+                  if (!emailRegex.hasMatch(value.trim())) {
+                    return 'Please, Enter your email correctly !';
+                  }
+                }
+                return null;
+              },
               decoration: InputDecoration(
                 suffixIcon: Icon(suffixIcon),
                 hintText: hintText,

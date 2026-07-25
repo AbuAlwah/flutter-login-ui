@@ -14,88 +14,90 @@ class Signin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAuthHeader(
-            imagePath: 'assets/singleCircle.png',
-            title: 'Sign in',
-            imageWidth: 300,
-            imageLinePath: 'assets/Line.png',
-            imageLineWidth: 95,
-          ),
-
-          Gap(30),
-          CustomTextFiled(
-            name: 'Email',
-            hintText: 'ex: abualwah@gmail.com',
-            suffixIcon: Icons.email_outlined,
-          ),
-          Gap(5),
-          CustomTextFiled(
-            name: 'Password',
-            hintText: 'Enter your password',
-            suffixIcon: Icons.visibility_off_outlined,
-          ),
-
-          Padding(
-            padding: EdgeInsetsGeometry.symmetric(
-              horizontal: 16.0,
-              vertical: 8.0,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomAuthHeader(
+              imagePath: 'assets/singleCircle.png',
+              title: 'Sign in',
+              imageWidth: 300,
+              imageLinePath: 'assets/Line.png',
+              imageLineWidth: 95,
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    SizedBox(
-                      height: 24,
-                      width: 24,
-                      child: Checkbox(
-                        value: true,
-                        onChanged: (value) {},
-                        activeColor: const Color(0xFF6F12E7),
+        
+            Gap(30),
+            CustomTextFiled(
+              name: 'Email',
+              hintText: 'ex: abualwah@gmail.com',
+              suffixIcon: Icons.email_outlined,
+            ),
+            Gap(5),
+            CustomTextFiled(
+              name: 'Password',
+              hintText: 'Enter your password',
+              suffixIcon: Icons.visibility_off_outlined,
+            ),
+        
+            Padding(
+              padding: EdgeInsetsGeometry.symmetric(
+                horizontal: 16.0,
+                vertical: 8.0,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(
+                        height: 24,
+                        width: 24,
+                        child: Checkbox(
+                          value: true,
+                          onChanged: (value) {},
+                          activeColor: const Color(0xFF6F12E7),
+                        ),
+                      ),
+                      const Gap(8),
+                      Text('Remember Me', style: GoogleFonts.rubik()),
+                    ],
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      minimumSize: Size.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                    child: Text(
+                      'Forget Password ?',
+                      style: GoogleFonts.rubik(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          color: Color(0xFF6F12E7),
+                        ),
                       ),
                     ),
-                    const Gap(8),
-                    Text('Remember Me', style: GoogleFonts.rubik()),
-                  ],
-                ),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    minimumSize: Size.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),
-                  child: Text(
-                    'Forget Password ?',
-                    style: GoogleFonts.rubik(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        color: Color(0xFF6F12E7),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Gap(70),
-          CustomContainer(name: 'Login'),
-          Gap(10),
-          CustomAuthFotter(
-            questionText: "Don't have an account ? ",
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Signup()),
-              );
-            },
-            actionText: 'Login',
-          ),
-        ],
+            Gap(70),
+            CustomContainer(name: 'Login'),
+            Gap(10),
+            CustomAuthFotter(
+              questionText: "Don't have an account ? ",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Signup()),
+                );
+              },
+              actionText: 'Login',
+            ),
+          ],
+        ),
       ),
     );
   }
