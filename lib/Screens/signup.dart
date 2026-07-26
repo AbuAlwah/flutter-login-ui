@@ -34,7 +34,7 @@ class Signup extends StatelessWidget {
             Gap(5),
             CustomTextFiled(
               name: 'Phone no',
-              hintText: '+967 700-000-000',
+              hintText: '+967 ',
               suffixIcon: Icons.phone_outlined,
               isObscure: false,
             ),

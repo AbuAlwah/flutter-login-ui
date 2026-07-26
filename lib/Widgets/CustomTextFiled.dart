@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart';
 
 class CustomTextFiled extends StatefulWidget {
   const CustomTextFiled({
@@ -56,9 +57,19 @@ class _CustomTextFiledState extends State<CustomTextFiled> {
               obscureText: isPassword ? _obscureText : false,
               keyboardType: widget.name == "Email"
                   ? TextInputType.emailAddress
-                  : (widget.name == "Password"
-                        ? TextInputType.visiblePassword
+                  : widget.name == "Password"
+                  ? TextInputType.visiblePassword
+                  : (widget.name == "Phone no"
+                        ? TextInputType.phone
                         : TextInputType.text),
+
+              maxLength: widget.name == "Phone no" ? 9 : null,
+              inputFormatters: widget.name == "Phone no"
+                  ? [
+                      FilteringTextInputFormatter
+                          .digitsOnly, 
+                    ]
+                  : null,
 
               autovalidateMode: AutovalidateMode.onUserInteraction,
               validator: (value) {
@@ -70,13 +81,13 @@ class _CustomTextFiledState extends State<CustomTextFiled> {
                     r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
                   );
                   if (!emailRegex.hasMatch(value.trim())) {
-                    return 'Please, Enter your email correctly !';
+                    return 'Please enter your email correctly !';
                   }
                 }
 
                 if (widget.name == "Password") {
                   if (value == null || value.isEmpty) {
-                    return "Please, Enter the password !";
+                    return "Please enter the password !";
                   }
                   if (value.length < 8) {
                     return "Password must be at least 8 characters long";
@@ -89,6 +100,24 @@ class _CustomTextFiledState extends State<CustomTextFiled> {
                   }
                   if (value.length < 8) {
                     return 'Password must be at least 8 characters long';
+                  }
+                }
+                if (widget.name == "Phone no") {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your phone number !';
+                  }
+
+                  List<String> allowedPrefixes = ["71", "77", "70", "78", "73"];
+                  bool isValidPrefix = allowedPrefixes.any(
+                    (prefix) => value.startsWith(prefix),
+                  );
+
+                  if (!isValidPrefix) {
+                    return 'Phone number must start with 71, 77, 78, 73 or 70';
+                  }
+
+                  if (value.length != 9) {
+                    return 'phone number must be exactly 9 digits';
                   }
                 }
                 return null;
