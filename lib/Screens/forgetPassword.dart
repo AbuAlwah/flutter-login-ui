@@ -15,19 +15,13 @@ class Forgetpassword extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Align(
-              alignment: AlignmentGeometry.topRight,
-              child: Image.asset("assets/Wave.png", width: 700),
-            ),
-
-            Gap(70),
-
             CustomAuthTitleAndSubtitle(
               title: "Mail Address Here",
               subTitle:
                   "Enter the email address associated\n with your account.",
               titleFontSize: 25,
               subTitleFontSize: 20,
+              imagPath: 'assets/Wave.png',
             ),
             Gap(50),
 
