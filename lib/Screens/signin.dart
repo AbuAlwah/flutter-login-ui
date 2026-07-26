@@ -43,7 +43,7 @@ class _SigninState extends State<Signin> {
             Gap(5),
             CustomTextFiled(
               name: 'Password',
-              hintText: 'Enter your password',
+              hintText: '',
               suffixIcon: Icons.visibility_off_outlined,
               isObscure: true,
             ),

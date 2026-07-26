@@ -41,14 +41,14 @@ class Signup extends StatelessWidget {
             Gap(5),
             CustomTextFiled(
               name: 'Password',
-              hintText: 'Enter your password',
+              hintText: '',
               suffixIcon: Icons.visibility_off_outlined,
               isObscure: true,
             ),
             Gap(5),
             CustomTextFiled(
               name: 'Confirm Password',
-              hintText: 'Enter your password',
+              hintText: '',
               suffixIcon: Icons.visibility_off_outlined,
               isObscure: true,
             ),

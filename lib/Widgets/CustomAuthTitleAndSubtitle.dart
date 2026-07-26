@@ -36,6 +36,7 @@ class CustomAuthTitleAndSubtitle extends StatelessWidget {
                 color: const Color.fromARGB(255, 93, 2, 213),
                 fontSize: titleFontSize,
                 fontWeight: FontWeight.w500,
+                height: 2,
               ),
             ),
           ),
@@ -45,10 +46,12 @@ class CustomAuthTitleAndSubtitle extends StatelessWidget {
           child: Text(
             subTitle,
             textAlign: TextAlign.center,
-            style: TextStyle(
-              color: const Color.fromARGB(255, 141, 140, 140),
-              fontSize: subTitleFontSize,
-              fontWeight: FontWeight.normal,
+            style: GoogleFonts.inter(
+              textStyle: TextStyle(
+                color: const Color.fromARGB(255, 182, 175, 175),
+                fontSize: subTitleFontSize,
+                fontWeight: FontWeight.w400,
+              ),
             ),
           ),
         ),

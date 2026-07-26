@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_login_app/Screens/emailVerification.dart';
 import 'package:simple_login_app/Screens/forgetPassword.dart';
+import 'package:simple_login_app/Screens/resetPassword.dart';
 import 'package:simple_login_app/Screens/welcom.dart';
 import 'package:flutter/services.dart';
 
@@ -26,6 +27,6 @@ class Auth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: EmailVerification());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: ResetPassword());
   }
 }
