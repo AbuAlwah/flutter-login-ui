@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
-import 'package:simple_login_app/Widgets/CustomContainer.dart';
+import 'package:simple_login_app/Screens/resetPassword.dart';
+import 'package:simple_login_app/Widgets/CustomElevatedButton.dart';
 
 import '../Widgets/CustomAuthTitleAndSubtitle.dart';
 
@@ -48,7 +49,8 @@ class _EmailVerificationState extends State<EmailVerification> {
               subTitle:
                   "Please enter the 4 digit code that send\n to your email address.",
               titleFontSize: 25,
-              subTitleFontSize: 20, imagPath: 'assets/Wave.png',
+              subTitleFontSize: 20,
+              imagPath: 'assets/Wave.png',
             ),
             Gap(50),
 
@@ -103,7 +105,17 @@ class _EmailVerificationState extends State<EmailVerification> {
               ],
             ),
             Gap(50),
-            CustomContainer(name: "Verify and Proceed"),
+            CustomElevatedButton(
+              name: "Verify and Proceed",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ResetPassword(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),

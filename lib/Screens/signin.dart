@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:simple_login_app/Screens/forgetPassword.dart';
 import 'package:simple_login_app/Screens/signup.dart';
 import 'package:simple_login_app/Widgets/CustomAuthFooter.dart';
 import 'package:simple_login_app/Widgets/CustomAuthHeader.dart';
-import 'package:simple_login_app/Widgets/CustomContainer.dart';
+import 'package:simple_login_app/Widgets/CustomElevatedButton.dart';
 import 'package:simple_login_app/Widgets/CustomTextFiled.dart';
 
 class Signin extends StatefulWidget {
@@ -15,10 +16,9 @@ class Signin extends StatefulWidget {
 }
 
 class _SigninState extends State<Signin> {
-      bool isRememberMe = false;
+  bool isRememberMe = false;
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -76,7 +76,14 @@ class _SigninState extends State<Signin> {
                     ],
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Forgetpassword(),
+                        ),
+                      );
+                    },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
                       minimumSize: Size.zero,
@@ -97,17 +104,17 @@ class _SigninState extends State<Signin> {
               ),
             ),
             Gap(70),
-            CustomContainer(name: 'Login'),
+            CustomElevatedButton(name: 'Login', onPressed: () {}),
             Gap(10),
             CustomAuthFotter(
               questionText: "Don't have an account ? ",
+              actionText: "Sign Up",
               onTap: () {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const Signup()),
                 );
               },
-              actionText: 'Login',
             ),
           ],
         ),

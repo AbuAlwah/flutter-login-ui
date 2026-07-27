@@ -3,7 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:simple_login_app/Screens/signin.dart';
 import 'package:simple_login_app/Widgets/CustomAuthFooter.dart';
 import 'package:simple_login_app/Widgets/CustomAuthHeader.dart';
-import 'package:simple_login_app/Widgets/CustomContainer.dart';
+import 'package:simple_login_app/Widgets/CustomElevatedButton.dart';
 import 'package:simple_login_app/Widgets/CustomTextFiled.dart';
 
 class Signup extends StatelessWidget {
@@ -52,15 +52,19 @@ class Signup extends StatelessWidget {
               suffixIcon: Icons.visibility_off_outlined,
               isObscure: true,
             ),
-            Gap(20),
-            CustomContainer(name: 'Sign Up'),
+            Gap(10),
+            CustomElevatedButton(name: "Creat Account", onPressed: () {}),
+
             Gap(10),
             CustomAuthFotter(
               questionText: 'Already have an account ! ',
+              actionText: "Sign In",
               onTap: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Signin()));
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Signin()),
+                );
               },
-              actionText: 'Create Account',
             ),
           ],
         ),

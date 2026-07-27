@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:simple_login_app/Screens/emailVerification.dart';
 import 'package:simple_login_app/Widgets/CustomAuthTitleAndSubtitle.dart';
-import 'package:simple_login_app/Widgets/CustomContainer.dart';
+import 'package:simple_login_app/Widgets/CustomElevatedButton.dart';
 import 'package:simple_login_app/Widgets/CustomTextFiled.dart';
 
 class Forgetpassword extends StatelessWidget {
@@ -33,7 +34,17 @@ class Forgetpassword extends StatelessWidget {
 
             Gap(30),
 
-            CustomContainer(name: "Recover Password"),
+            CustomElevatedButton(
+              name: "Recover Password",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const EmailVerification(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),

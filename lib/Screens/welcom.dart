@@ -23,7 +23,7 @@ class Welcom extends StatelessWidget {
             child: Text(
               "Welcom",
               style: GoogleFonts.rubik(
-                textStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
+                textStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
               ),
             ),
           ),

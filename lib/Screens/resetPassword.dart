@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:simple_login_app/Widgets/CustomAuthTitleAndSubtitle.dart';
-import 'package:simple_login_app/Widgets/CustomContainer.dart';
+import 'package:simple_login_app/Widgets/CustomElevatedButton.dart';
 import 'package:simple_login_app/Widgets/CustomTextFiled.dart';
 
 class ResetPassword extends StatefulWidget {
@@ -43,7 +43,8 @@ class _ResetPasswordState extends State<ResetPassword> {
               isObscure: true,
             ),
             Gap(30),
-            CustomContainer(name: "Continue"),
+                        CustomElevatedButton(name: "Continue", onPressed: () {}),
+
           ],
         ),
       ),
