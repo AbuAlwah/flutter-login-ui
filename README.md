@@ -14,7 +14,7 @@ A clean, modern, and full-featured user authentication mobile application built 
 
 | 🚀 Welcome | 🔐 Sign In | 📝 Sign Up |
 | :---: | :---: | :---: |
-| <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/17f9548654ec9f222dc44d3ebd3d8e368d3be78a/assets/WelcomPage_v2.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/17f9548654ec9f222dc44d3ebd3d8e368d3be78a/assets/SigninPage_v2.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/17f9548654ec9f222dc44d3ebd3d8e368d3be78a/assets/SignupPage_v2.jpg" width="220"/> |
+| <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/8a2afa8da4aaa595fa53e6d88586ced02fdce801/assets/WelcomPage_v2.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/8a2afa8da4aaa595fa53e6d88586ced02fdce801/assets/SigninPage_v2.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/8a2afa8da4aaa595fa53e6d88586ced02fdce801/assets/SignupPage_v2.jpg" width="220"/> |
 
 | 🔑 Recover Password | 📩 OTP Verification | 🔄 Reset Password |
 | :---: | :---: | :---: |
@@ -63,9 +63,11 @@ lib/
     ├── CustomTextFiled.dart
     ├── CustomElevatedButton.dart
     └── CustomAuthFooter.dart
+    
+    '''
 
     ---
-    ## ⚙️ Installation & Getting Started
+## ⚙️ Installation & Getting Started
 
 1. **Clone the Repository:**
    ```bash
