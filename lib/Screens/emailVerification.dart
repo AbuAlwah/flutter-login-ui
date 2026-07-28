@@ -127,6 +127,25 @@ class _EmailVerificationState extends State<EmailVerification> {
                 ),
               ),
             ),
+
+            Gap(20),
+            Center(
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  "⟵ Change Email",
+                  style: GoogleFonts.rubik(
+                    textStyle: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                      color: Color(0xFF6F12E7),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
