@@ -16,6 +16,7 @@ class EmailVerification extends StatefulWidget {
 
 class _EmailVerificationState extends State<EmailVerification> {
   final TextEditingController _pinController = TextEditingController();
+  bool _isButtonEnabled = false;
 
   @override
   void dispose() {
@@ -34,7 +35,7 @@ class _EmailVerificationState extends State<EmailVerification> {
         color: Colors.black,
       ),
       decoration: BoxDecoration(
-        color: const Color(0xFFEFEFF4), // اللون الرمادي الفاتح كما في التصميم
+        color: const Color(0xFFEFEFF4),
         borderRadius: BorderRadius.circular(8),
       ),
     );
@@ -56,18 +57,22 @@ class _EmailVerificationState extends State<EmailVerification> {
 
             Center(
               child: Pinput(
-                length: 4, // عدد المربعات
+                length: 4,
                 controller: _pinController,
                 defaultPinTheme: defaultPinTheme,
                 focusedPinTheme: defaultPinTheme.copyWith(
                   decoration: defaultPinTheme.decoration!.copyWith(
-                    border: Border.all(
-                      color: const Color(0xFF5D02D5),
-                    ), // لون عند التركيز
+                    border: Border.all(color: const Color(0xFF5D02D5)),
                   ),
                 ),
+
+                onChanged: (pin) {
+                  setState(() {
+                    _isButtonEnabled = pin.length == 4;
+                  });
+                },
+
                 onCompleted: (pin) {
-                  // يتم استدعاؤها أوتوماتيكياً عند إكمال الـ 4 أرقام
                   print("Entered PIN: $pin");
                 },
               ),
@@ -105,16 +110,22 @@ class _EmailVerificationState extends State<EmailVerification> {
               ],
             ),
             Gap(50),
-            CustomElevatedButton(
-              name: "Verify and Proceed",
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ResetPassword(),
-                  ),
-                );
-              },
+            Opacity(
+              opacity: _isButtonEnabled ? 1.0 : 0.5,
+              child: AbsorbPointer(
+                absorbing: !_isButtonEnabled,
+                child: CustomElevatedButton(
+                  name: "Verify and Proceed",
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ResetPassword(),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
           ],
         ),
