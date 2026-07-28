@@ -6,14 +6,14 @@ import 'package:simple_login_app/Widgets/CustomAuthTitleAndSubtitle.dart';
 import 'package:simple_login_app/Widgets/CustomElevatedButton.dart';
 import 'package:simple_login_app/Widgets/CustomTextFiled.dart';
 
-class Forgetpassword extends StatefulWidget {
-  const Forgetpassword({super.key});
+class RecoverPassword extends StatefulWidget {
+  const RecoverPassword({super.key});
 
   @override
-  State<Forgetpassword> createState() => _ForgetpasswordState();
+  State<RecoverPassword> createState() => _RecoverPasswordState();
 }
 
-class _ForgetpasswordState extends State<Forgetpassword> {
+class _RecoverPasswordState extends State<RecoverPassword> {
   final _formkey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
 

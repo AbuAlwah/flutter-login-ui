@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:simple_login_app/Screens/forgetPassword.dart';
+import 'package:simple_login_app/Screens/recoverPassword.dart';
 import 'package:simple_login_app/Screens/signup.dart';
 import 'package:simple_login_app/Widgets/CustomAuthFooter.dart';
 import 'package:simple_login_app/Widgets/CustomAuthHeader.dart';
@@ -80,7 +80,7 @@ class _SigninState extends State<Signin> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Forgetpassword(),
+                          builder: (context) => const RecoverPassword(),
                         ),
                       );
                     },

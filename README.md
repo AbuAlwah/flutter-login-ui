@@ -1,28 +1,46 @@
+<div align="center">
+
 # 📱 Mobile Auth App (Flutter)
 
-A clean and modern user authentication mobile application built with **Flutter** and **Dart**. This project focuses on beautiful, reusable UI widgets and a responsive layout for login and registration screens.
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
 
+A clean, modern, and full-featured user authentication mobile application built with **Flutter** and **Dart**. This project features a complete authentication flow including onboarding, sign-in, sign-up, password recovery with OTP verification, and password reset screens—all built with modular, reusable components and dynamic state-driven UI interactions.
+
+</div>
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots Showcase
 
-|                                           🚀 Welcome Screen                                           |                                           🔐 Sign In Screen                                           |                                           📝 Sign Up Screen                                           |
-| :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
-| <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/main/assets/WelcomPage.jpg" width="250"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/main/assets/SigninPage.jpg" width="250"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/main/assets/SignupPage.jpg" width="250"/> |
+| 🚀 Welcome | 🔐 Sign In | 📝 Sign Up |
+| :---: | :---: | :---: |
+| <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/17f9548654ec9f222dc44d3ebd3d8e368d3be78a/assets/WelcomPage.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/17f9548654ec9f222dc44d3ebd3d8e368d3be78a/assets/SigninPage.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/17f9548654ec9f222dc44d3ebd3d8e368d3be78a/assets/SignupPage.jpg" width="220"/> |
+
+| 🔑 Recover Password | 📩 OTP Verification | 🔄 Reset Password |
+| :---: | :---: | :---: |
+| <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/main/assets/RecoverPassword.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/main/assets/OTPVerification.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/main/assets/ResetPassword.jpg" width="220"/> |
+
 
 ---
 
 ## ✨ Features
 
-- **Custom Reusable Widgets:** Includes `CustomAuthHeader` and `CustomTextFiled` to minimize code repetition.
-- **Transparent Status Bar:** Customized system overlays to make the app background look fully immersive.
+- **Complete Auth Flow:** Seamless transition across Welcome, Sign In, Sign Up, Recover Password, Email Verification (OTP), and Reset Password screens.
+- **Smart OTP Input Validation:** Powered by `pinput`, featuring a dynamic verification button that activates only when all 4 digits are completely entered.
+- **Clean Navigation Management:** Optimized stack control using `Navigator.pushAndRemoveUntil` and `pushReplacement` to ensure a clean navigation history.
+- **Highly Reusable Architecture:** Custom modular components (`CustomAuthTitleAndSubtitle`, `CustomElevatedButton`, `CustomTextField`, etc.) to enforce DRY (Don't Repeat Yourself) principles.
+- **Modern UI/UX Design:** Immersive layouts, modern typography, custom curved header shapes, and intuitive back-navigation actions (`← Back to Login`, `← Change Email`).
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Packages
 
-- **Framework:** Flutter
-- **Language:** Dart
+- **Framework:** [Flutter](https://flutter.dev/)
+- **Language:** [Dart](https://dart.dev/)
+- **Key Packages:**
+  - `pinput`: For custom 4-digit code entry fields.
+  - `google_fonts`: For modern typography (e.g., Rubik).
+  - `gap`: For clean and consistent layout spacing.
 
 ---
 
@@ -31,13 +49,17 @@ A clean and modern user authentication mobile application built with **Flutter**
 ```text
 lib/
 ├── main.dart
-├── screens/
-    ├── welcom.dart
+├── assets/
+├── Screens/
+│   ├── welcom.dart
 │   ├── signin.dart
-│   └── signup.dart
-└── widgets/
+│   ├── signup.dart
+│   ├── recoverPassword.dart
+│   ├── emailVerification.dart
+│   └── resetPassword.dart
+└── Widgets/
     ├── CustomAuthHeader.dart
+    ├── CustomAuthTitleAndSubtitle.dart
     ├── CustomTextFiled.dart
-    ├── CustomContainer.dart
+    ├── CustomElevatedButton.dart
     └── CustomAuthFooter.dart
-```

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:simple_login_app/Screens/forgetPassword.dart';
 import 'package:simple_login_app/Screens/welcom.dart';
 import 'package:flutter/services.dart';
 
