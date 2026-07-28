@@ -7,19 +7,17 @@
 
 A clean, modern, and full-featured user authentication mobile application built with **Flutter** and **Dart**. This project features a complete authentication flow including onboarding, sign-in, sign-up, password recovery with OTP verification, and password reset screens—all built with modular, reusable components and dynamic state-driven UI interactions.
 
-</div>
----
+## </div>
 
 ## 📸 Screenshots Showcase
 
-| 🚀 Welcome | 🔐 Sign In | 📝 Sign Up |
-| :---: | :---: | :---: |
+|                                                                  🚀 Welcome                                                                  |                                                                  🔐 Sign In                                                                  |                                                                  📝 Sign Up                                                                  |
+| :------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/8a2afa8da4aaa595fa53e6d88586ced02fdce801/assets/WelcomPage_v2.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/8a2afa8da4aaa595fa53e6d88586ced02fdce801/assets/SigninPage_v2.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/8a2afa8da4aaa595fa53e6d88586ced02fdce801/assets/SignupPage_v2.jpg" width="220"/> |
 
-| 🔑 Recover Password | 📩 OTP Verification | 🔄 Reset Password |
-| :---: | :---: | :---: |
+|                                            🔑 Recover Password                                             |                                            📩 OTP Verification                                             |                                            🔄 Reset Password                                             |
+| :--------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/main/assets/RecoverPassword.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/main/assets/OTPVerification.jpg" width="220"/> | <img src="https://github.com/AbuAlwah/flutter-login-ui/blob/main/assets/ResetPassword.jpg" width="220"/> |
-
 
 ---
 
@@ -63,12 +61,14 @@ lib/
     ├── CustomTextFiled.dart
     ├── CustomElevatedButton.dart
     └── CustomAuthFooter.dart
-    
-    '''
 
-    ---
+```
+
+ ---
+
 ## ⚙️ Installation & Getting Started
 
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/AbuAlwah/flutter-login-ui.git
+   ```
