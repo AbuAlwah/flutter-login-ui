@@ -11,12 +11,14 @@ class CustomTextFiled extends StatefulWidget {
     required this.hintText,
     required this.suffixIcon,
     this.isObscure = false,
+    this.controller
   });
 
   final String name;
   final String hintText;
   final IconData suffixIcon;
   final bool isObscure;
+  final TextEditingController? controller;
 
   @override
   State<CustomTextFiled> createState() => _CustomTextFiledState();
@@ -54,6 +56,7 @@ class _CustomTextFiledState extends State<CustomTextFiled> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: TextFormField(
+              controller: widget.controller,
               obscureText: isPassword ? _obscureText : false,
               keyboardType: widget.name == "Email"
                   ? TextInputType.emailAddress
@@ -65,10 +68,7 @@ class _CustomTextFiledState extends State<CustomTextFiled> {
 
               maxLength: widget.name == "Phone no" ? 9 : null,
               inputFormatters: widget.name == "Phone no"
-                  ? [
-                      FilteringTextInputFormatter
-                          .digitsOnly, 
-                    ]
+                  ? [FilteringTextInputFormatter.digitsOnly]
                   : null,
 
               autovalidateMode: AutovalidateMode.onUserInteraction,

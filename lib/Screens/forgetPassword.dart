@@ -5,47 +5,67 @@ import 'package:simple_login_app/Widgets/CustomAuthTitleAndSubtitle.dart';
 import 'package:simple_login_app/Widgets/CustomElevatedButton.dart';
 import 'package:simple_login_app/Widgets/CustomTextFiled.dart';
 
-class Forgetpassword extends StatelessWidget {
+class Forgetpassword extends StatefulWidget {
   const Forgetpassword({super.key});
+
+  @override
+  State<Forgetpassword> createState() => _ForgetpasswordState();
+}
+
+class _ForgetpasswordState extends State<Forgetpassword> {
+  final _formkey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomAuthTitleAndSubtitle(
-              title: "Mail Address Here",
-              subTitle:
-                  "Enter the email address associated\n with your account.",
-              titleFontSize: 25,
-              subTitleFontSize: 20,
-              imagPath: 'assets/Wave.png',
-            ),
-            Gap(50),
+      body: Form(
+        key: _formkey,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomAuthTitleAndSubtitle(
+                title: "Mail Address Here",
+                subTitle:
+                    "Enter the email address associated\n with your account.",
+                titleFontSize: 25,
+                subTitleFontSize: 20,
+                imagPath: 'assets/Wave.png',
+              ),
+              Gap(50),
 
-            CustomTextFiled(
-              name: "Email",
-              hintText: "ex: abualwah@gmail.com",
-              suffixIcon: Icons.email_outlined,
-            ),
+              CustomTextFiled(
+                name: "Email",
+                hintText: "ex: abualwah@gmail.com",
+                suffixIcon: Icons.email_outlined,
+                controller: _emailController,
+              ),
 
-            Gap(30),
+              Gap(30),
 
-            CustomElevatedButton(
-              name: "Recover Password",
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const EmailVerification(),
-                  ),
-                );
-              },
-            ),
-          ],
+              CustomElevatedButton(
+                name: "Recover Password",
+                onPressed: () {
+                  if (_formkey.currentState!.validate()) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const EmailVerification(),
+                      ),
+                    );
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
